@@ -1,0 +1,244 @@
+body {
+    color: #fff;
+    background-color: rgb(20, 20, 20);
+    margin: 0;
+}
+
+.navbar-brand:hover,
+.nav-link:hover {
+    color: #ffc107 !important;
+}
+
+#background-image {
+    background-image: url('RESİMLER/html.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: calc(100vh - 40px); /* Siyah arka plan hariç tüm ekran yüksekliği */
+    display: flex;
+    align-items: flex-start; /* Resmi yukarıya hizalıyor */
+    justify-content: center; /* Resmi yatayda ortaya hizalıyor */
+    padding-top: 20px; /* Siyah arka planın üstündeki boşluk */
+    margin-top: -20px; /* Siyah arka planın üstündeki boşluk */
+}
+
+#background-image1 {
+    background-image: url('RESİMLER/nisa.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: calc(100vh - 40px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 20px;
+    margin-top: -20px;
+}
+
+.jumbotron {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    margin-bottom: 0;
+    margin-top: 60px; /* Siyah arka planda eşit boşluk sağlıyor */
+}
+
+.jumbotron h1 {
+    color: #ffc107; /* Sarı renk */
+    margin-bottom: 20; /* Yazının altında boşluk bırakma */
+}
+
+.social-icons {
+    background-color: #343a40;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px; /* Siyah arka planda eşit boşluk sağlıyor */
+}
+
+.social-icon {
+    color: #fff;
+    font-size: 20px; /* İkonları daha büyük yapmak için font boyutunu artır */
+    margin: 0 10px; /* Boşlukları artır */
+}
+
+.card {
+    margin-top: 20px;
+}
+
+.card-header {
+    color: #fff;
+}
+
+.card-body {
+    background-color: #737170;
+    text-align: center;
+    padding: 20px;
+}
+
+.card.border-warning {
+    border-color: #ffc107;
+}
+
+.card-header.bg-warning {
+    background-color: #ffc107;
+}
+
+.card-header.bg-warning h4 {
+    margin-bottom: 0;
+}
+
+/* Slayt gösterisi için özel stiller */
+.carousel-item img {
+    max-height: 400px; /* Resim boyutunu artırdık */
+    width: auto;
+    margin: 0 auto;
+    display: block; /* Resimleri ortaladık */
+}
+
+.carousel {
+    margin-top: 20px; /* Slayt gösterisi arasındaki boşluğu artırdık */
+}
+
+.tree {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tree li {
+    margin-top: 10px;
+    position: relative;
+}
+
+.tree li:before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -20px;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0 0 0 5px;
+    width: 20px;
+    height: 10px;
+}
+
+.tree li:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -20px;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    width: 1px;
+    height: 100%;
+}
+
+.tree li:last-child:before {
+    height: 10px;
+    border-radius: 0 0 5px 0;
+}
+
+.tree li span {
+    background-color: #ffc107;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.tree ul {
+    padding-left: 20px;
+}
+
+.galatasaray-info {
+    background-color: #dc3545;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.galatasaray-info h2 {
+    margin-top: 0;
+    color: #fff;
+}
+
+.galatasaray-info p {
+    font-size: 18px;
+}
+
+.galatasaray-info img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.trophy-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+.trophy-list li:before {
+    content: "\1F3C6"; /* Kupa sembolü */
+    margin-right: 10px;
+}
+
+.footer {
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#background-image3 {
+    background-color: #f8f9fa;
+    border: 5px solid #343a40;
+    padding: 20px;
+}
+
+.container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.container h1,
+.container h2 {
+    color: #ffc107;
+}
+
+.container p {
+    font-size: 18px;
+}
+
+.container ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.container ul li {
+    margin-bottom: 10px;
+}
+
+.container ul li a {
+    color: #ffc107;
+    text-decoration: none;
+}
+
+.container ul li a:hover {
+    color: #ff8c00;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

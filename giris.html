@@ -1,0 +1,190 @@
+<?php
+    session_start();
+
+    // Oturumda giriş yapılmamışsa, kullanıcıyı giriş sayfasına yönlendir
+    if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+        header("Location: giris.html");
+        exit;
+    }
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <form action="login.php" method="POST" id="loginForm">
+    <title>GİRİŞ YAP</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<style>
+    /* Arkaplan stili */
+    body {
+        background-image: url('RESİMLER/gir.jpeg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        min-height: 100vh;
+    }
+
+    /* Üst menü ve giriş formu arka planı */
+    .navbar,
+    .card {
+        background-color: #737170;
+        padding: 10px;
+        border-radius: 0;
+    }
+
+    .card-header {
+        background-color: #ffc107 !important;
+    }
+
+    /* Sosyal ikonların bulunduğu kısım */
+    .social-icons {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background-color: #343a40;
+        border-radius: 0;
+    }
+
+    .social-icon {
+        color: #fff;
+        font-size: 20px;
+        margin: 0 10px;
+    }
+
+    .navbar {
+        margin-bottom: 0;
+        /* Alt boşluk olmasını engeller */
+    }
+
+    /* Mesaj kutusu için stil */
+    .message-box {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">NİSA NUR GÜREL</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="anasayfa.html">Anasayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="hakkimda.html">Hakkımda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ozgecmis.html">Özgeçmiş</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sehrim.html">Şehrim</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="takim.html">Takımım</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="iletisim.html">İletişim</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="giris.html">Giriş Yap</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-warning">
+                        <h4 class="mb-0">Giriş Yap</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="login.php" method="POST" id="loginForm">
+                            <div class="form-group">
+                                <label for="username">Kullanıcı Adı (Öğrenci Numarası):</label>
+                                <input type="text" class="form-control" id="username" name="username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Şifre:</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Giriş Yap</button>
+                            <a href="cikis.php">Çıkış Yap</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="social-icons">
+        <a href="https://www.instagram.com/gurelnisanur?igsh=MXdkZzU2M2MxdjF2Yg==" class="social-icon"
+            target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/nisa-nur-g%C3%BCrel-b5586a27a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+            class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/gurelnisanur?tab=repositories" class="social-icon" target="_blank"><i
+                class="fab fa-github"></i></a>
+    </div>
+
+    <div class="message-box" id="messageBox">
+        <div class="alert alert-danger" role="alert" id="messageContent"></div>
+    </div>
+
+    <script>
+       document.getElementById("loginForm").addEventListener("submit", function (event) {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    if (username.trim() === "" || password.trim() === "") {
+        showMessage("Kullanıcı adı veya şifre eksik");
+        event.preventDefault();
+    } else if (!isValidEmail(username)) {
+        showMessage("Geçerli bir e-posta adresi girin");
+        event.preventDefault();
+    }
+});
+
+// E-posta doğrulaması
+function isValidEmail(email) {
+    return /\S+@\S+\.\S+/.test(email);
+}
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
