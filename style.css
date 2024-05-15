@@ -228,6 +228,190 @@ body {
     color: #ff8c00;
 }
 
+/* İletişim sayfasına özgü stiller */
+.iletisim-sayfasi {
+    background-image: url('RESİMLER/mesaj.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    color: #fff;
+}
+
+.iletisim-sayfasi .container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.iletisim-sayfasi .container h1,
+.iletisim-sayfasi .container h2 {
+    color: #ffc107;
+}
+
+.iletisim-sayfasi .container p {
+    font-size: 18px;
+}
+
+.iletisim-sayfasi .container ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.iletisim-sayfasi .container ul li {
+    margin-bottom: 10px;
+}
+
+.iletisim-sayfasi .container ul li a {
+    color: #ffc107;
+    text-decoration: none;
+}
+
+.iletisim-sayfasi .container ul li a:hover {
+    color: #ff8c00;
+}
+
+.iletisim-sayfasi .card {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #ffc107;
+    border-radius: 15px;
+    margin-left: 20px; /* İletişim formunu sola almak için ekledik */
+    width: 400px; /* Formun genişliğini ayarladık */
+    overflow: hidden; /* Gri alanın sarı çerçeveyi aşmasını engelledik */
+}
+
+.iletisim-sayfasi .card-header {
+    color: #ffc107;
+    border-bottom: none; /* Kart başlığındaki çerçeveyi kaldırdık */
+}
+
+.iletisim-sayfasi .card-body {
+    background-color: #343a40;
+    padding-top: 30px; /* Formun üst kısmında biraz boşluk bıraktık */
+    padding-bottom: 30px; /* Formun alt kısmında biraz boşluk bıraktık */
+}
+
+.iletisim-sayfasi .form-control {
+    background-color: #737170;
+    color: #fff;
+}
+
+.iletisim-sayfasi .btn-primary {
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+
+.iletisim-sayfasi .btn-primary:hover {
+    background-color: #ff8c00;
+    border-color: #ff8c00;
+}
+
+/* Giriş Sayfası Stilleri */
+body.giris-sayfasi {
+    background-image: url('RESİMLER/gir.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-height: 100vh;
+}
+
+body.giris-sayfasi .navbar,
+body.giris-sayfasi .card {
+    background-color: #737170;
+    padding: 10px;
+    border-radius: 0;
+}
+
+body.giris-sayfasi .card-header {
+    background-color: #ffc107 !important;
+}
+
+body.giris-sayfasi .social-icons {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: #343a40;
+    border-radius: 0;
+}
+
+body.giris-sayfasi .social-icon {
+    color: #fff;
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+body.giris-sayfasi .navbar {
+    margin-bottom: 0;
+    /* Alt boşluk olmasını engeller */
+}
+
+body.giris-sayfasi .message-box {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+/* İlgi Alanlarım Sayfası Stil */
+body.ilgi-alanlarim .jumbotron {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('background.jpg') center/cover no-repeat;
+    color: white;
+    padding: 50px 0;
+    margin-bottom: 0;
+}
+
+body.ilgi-alanlarim .card {
+    margin-top: 30px;
+}
+
+body.ilgi-alanlarim .card-header {
+    background-color: #343a40;
+    color: white;
+}
+
+body.ilgi-alanlarim .card-body {
+    padding: 20px;
+    text-align: center;
+    /* Ortalama için */
+}
+
+body.ilgi-alanlarim .card-title {
+    font-weight: bold;
+}
+
+body.ilgi-alanlarim .card-img-top {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Resimlerin ortalanması için */
+    margin: 0 auto;
+    /* Resimlerin ortalanması için */
+    margin-bottom: 20px;
+    /* Yazı ile resim arasındaki boşluğu ayarlamak için */
+}
+
+body.ilgi-alanlarim .film-card,
+body.ilgi-alanlarim .book-card {
+    margin-bottom: 20px;
+}
+
+body.ilgi-alanlarim .book-card img {
+    max-width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+body.ilgi-alanlarim .book-card .card-body {
+    text-align: center;
+}
+
 
 
 
