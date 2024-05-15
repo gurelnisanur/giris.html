@@ -13,73 +13,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <form action="login.php" method="POST" id="loginForm">
     <title>GİRİŞ YAP</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
-<style>
-    /* Arkaplan stili */
-    body {
-        background-image: url('RESİMLER/gir.jpeg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: center;
-        margin: 0;
-        padding: 0;
-        position: relative;
-        min-height: 100vh;
-    }
-
-    /* Üst menü ve giriş formu arka planı */
-    .navbar,
-    .card {
-        background-color: #737170;
-        padding: 10px;
-        border-radius: 0;
-    }
-
-    .card-header {
-        background-color: #ffc107 !important;
-    }
-
-    /* Sosyal ikonların bulunduğu kısım */
-    .social-icons {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        padding: 20px;
-        background-color: #343a40;
-        border-radius: 0;
-    }
-
-    .social-icon {
-        color: #fff;
-        font-size: 20px;
-        margin: 0 10px;
-    }
-
-    .navbar {
-        margin-bottom: 0;
-        /* Alt boşluk olmasını engeller */
-    }
-
-    /* Mesaj kutusu için stil */
-    .message-box {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 9999;
-    }
-</style>
-
-<body>
+<body class="giris-sayfasi">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">NİSA NUR GÜREL</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -157,23 +97,22 @@
 
     <script>
        document.getElementById("loginForm").addEventListener("submit", function (event) {
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
+           var username = document.getElementById("username").value;
+           var password = document.getElementById("password").value;
 
-    if (username.trim() === "" || password.trim() === "") {
-        showMessage("Kullanıcı adı veya şifre eksik");
-        event.preventDefault();
-    } else if (!isValidEmail(username)) {
-        showMessage("Geçerli bir e-posta adresi girin");
-        event.preventDefault();
-    }
-});
+           if (username.trim() === "" || password.trim() === "") {
+               showMessage("Kullanıcı adı veya şifre eksik");
+               event.preventDefault();
+           } else if (!isValidEmail(username)) {
+               showMessage("Geçerli bir e-posta adresi girin");
+               event.preventDefault();
+           }
+       });
 
-// E-posta doğrulaması
-function isValidEmail(email) {
-    return /\S+@\S+\.\S+/.test(email);
-}
-
+       // E-posta doğrulaması
+       function isValidEmail(email) {
+           return /\S+@\S+\.\S+/.test(email);
+       }
     </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
